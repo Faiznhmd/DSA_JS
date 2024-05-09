@@ -40,6 +40,15 @@ class Linkedlist {
     }
     const newNode = new Node(data);
     if (index === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
     }
+    let current = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      current = current.next;
+    }
+    newNode.next = current.next;
+    current.next = newNode;
   }
 }
