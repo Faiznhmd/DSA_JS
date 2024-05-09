@@ -51,4 +51,10 @@ class Linkedlist {
     newNode.next = current.next;
     current.next = newNode;
   }
+  removeTop() {
+    if (!this.head) {
+      return;
+    }
+    this.head = this.head.next;
+  }
 }
